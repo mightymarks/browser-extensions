@@ -1,0 +1,39 @@
+{
+	"name": "mightymarks-extensions",
+	"version": "0.2.0",
+	"description": "Might Marks browser extensions",
+	"main": "index.js",
+	"repository": "https://a1x@github.com/mightymarks/extensions.git",
+	"author": "Alex Sanders <a@snd.rs>",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"private": true,
+	"scripts": {
+		"build": "webpack --env.prod",
+		"dev": "webpack --env.dev"
+	},
+	"dependencies": {
+		"@babel/core": "7.8.3",
+		"@babel/plugin-transform-react-jsx": "7.8.3",
+		"@babel/plugin-transform-runtime": "7.8.3",
+		"@babel/preset-env": "7.8.3",
+		"@babel/preset-typescript": "7.8.3",
+		"@babel/register": "7.8.3",
+		"@babel/runtime-corejs3": "7.8.3",
+		"babel-loader": "8.0.6",
+		"clean-webpack-plugin": "3.0.0",
+		"copy-webpack-plugin": "5.1.1",
+		"core-js": "3.6.4",
+		"html-webpack-plugin": "3.2.0",
+		"html-webpack-template": "6.2.0",
+		"preact": "10.2.1",
+		"styled-jsx": "3.2.4",
+		"terser-webpack-plugin": "2.3.2",
+		"typescript": "3.7.4",
+		"webextension-polyfill-ts": "0.11.0",
+		"webpack": "4.41.5",
+		"webpack-cli": "3.3.10",
+		"webpack-dev-server": "3.10.1",
+		"webpack-extension-manifest-plugin": "0.5.0",
+		"webpack-extension-reloader": "1.1.4"
+	}
+}

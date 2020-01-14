@@ -1,0 +1,35 @@
+{
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"useBuiltIns": "usage",
+				"corejs": 3,
+				"targets": {
+					"esmodules": true
+				}
+			}
+		],
+		"@babel/preset-typescript"
+	],
+	"plugins": [
+		[
+			"@babel/plugin-transform-runtime",
+			{
+				"corejs": 3,
+				"useESModules": true,
+				"version": "7.8.3"
+			}
+		],
+		[
+			"styled-jsx/babel",
+			{
+				"sourceMaps": true
+			}
+		],
+		[
+			"@babel/plugin-transform-react-jsx",
+			{ "pragma": "h", "pragmaFrag": "Fragment" }
+		]
+	]
+}
