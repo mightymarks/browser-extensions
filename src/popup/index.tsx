@@ -22,6 +22,7 @@ const App = () => (
 				width: 200px;
 			}
 		`}</style>
+		hi
 	</div>
 )
 

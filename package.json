@@ -8,8 +8,9 @@
 	"license": "SEE LICENSE IN LICENSE.txt",
 	"private": true,
 	"scripts": {
-		"build": "webpack --env.prod",
-		"dev": "webpack --env.dev"
+		"clean": "rm -rf dist",
+		"build": "yarn clean && webpack --env.prod",
+		"dev": "yarn clean && webpack --env.dev"
 	},
 	"dependencies": {
 		"@babel/core": "7.8.3",
@@ -20,12 +21,13 @@
 		"@babel/register": "7.8.3",
 		"@babel/runtime-corejs3": "7.8.3",
 		"babel-loader": "8.0.6",
-		"clean-webpack-plugin": "3.0.0",
 		"copy-webpack-plugin": "5.1.1",
 		"core-js": "3.6.4",
+		"friendly-errors-webpack-plugin": "1.7.0",
 		"html-webpack-plugin": "3.2.0",
 		"html-webpack-template": "6.2.0",
 		"preact": "10.2.1",
+		"size-plugin": "2.0.1",
 		"styled-jsx": "3.2.4",
 		"terser-webpack-plugin": "2.3.2",
 		"typescript": "3.7.4",

@@ -1,8 +1,10 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
+import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'path'
+import SizePlugin from 'size-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
+import { ProvidePlugin } from 'webpack'
 import WebpackExtensionManifestPlugin from 'webpack-extension-manifest-plugin'
 import ExtensionReloader from 'webpack-extension-reloader'
 
@@ -61,7 +63,9 @@ export default (env = {}) => ({
 	},
 
 	plugins: [
-		new CleanWebpackPlugin(),
+		new ProvidePlugin({
+			h: ['preact', 'h'],
+		}),
 		new WebpackExtensionManifestPlugin({
 			config: {
 				base: require('./src/manifest.json'),
@@ -70,7 +74,15 @@ export default (env = {}) => ({
 		}),
 		new CopyPlugin([
 			{
-				from: require.resolve('webextension-polyfill'),
+				from: require
+					.resolve('webextension-polyfill')
+					.replace('.js', '.min.js'),
+				to: DIST,
+			},
+			{
+				from: require
+					.resolve('webextension-polyfill')
+					.replace('.js', '.min.js.map'),
 				to: DIST,
 			},
 		]),
@@ -81,6 +93,7 @@ export default (env = {}) => ({
 			template: require('html-webpack-template'),
 			appMountId: 'app',
 		}),
+		env.dev && new FriendlyErrorsWebpackPlugin(),
 		env.dev &&
 			new ExtensionReloader({
 				port: 8080,
@@ -89,6 +102,7 @@ export default (env = {}) => ({
 					popup: 'popup',
 				},
 			}),
+		env.prod && new SizePlugin(),
 	].filter(Boolean),
 
 	devServer: {
