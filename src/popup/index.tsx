@@ -20,6 +20,7 @@ const App = () => (
 		<style jsx>{`
 			div {
 				width: 200px;
+				height: 200px;
 			}
 		`}</style>
 		hi
