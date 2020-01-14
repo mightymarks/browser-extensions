@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Mighty Marks",
 
-	"description": "Mighty Marks keeps your browser bookmarks in sync – in Chrome Firefox Edge Opera Brave and more (Safari coming soon).",
+	"description": "Mighty Marks keeps your browser bookmarks in sync – in Chrome, Firefox, Edge, Opera, Brave and more (Safari coming soon).",
 
 	"permissions": ["bookmarks"],
 	"background": {
