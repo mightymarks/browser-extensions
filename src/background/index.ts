@@ -1,1 +1,3 @@
-console.log('hi there')
+import { getLocalBookmarks } from './localBookmarks'
+
+getLocalBookmarks().then(console.log)

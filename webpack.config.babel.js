@@ -44,7 +44,9 @@ export default (env = {}) => ({
 		extensions: ['.tsx', '.ts', '.js'],
 		mainFields: ['module', 'browser', 'main'],
 		alias: {
-			react: 'preact', // for styled-jsx
+			react: 'preact/compat',
+			'react-dom/test-utils': 'preact/test-utils',
+			'react-dom': 'preact/compat',
 		},
 	},
 
@@ -64,7 +66,7 @@ export default (env = {}) => ({
 
 	plugins: [
 		new ProvidePlugin({
-			h: ['preact', 'h'],
+			React: 'react',
 		}),
 		new WebpackExtensionManifestPlugin({
 			config: {

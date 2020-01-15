@@ -1,6 +1,6 @@
-import { render } from 'preact'
+import { render } from 'react-dom'
 
-const App = () => (
+const App: React.FC = () => (
 	<div>
 		<style jsx global>{`
 			* {
@@ -19,8 +19,8 @@ const App = () => (
 		`}</style>
 		<style jsx>{`
 			div {
-				width: 200px;
-				height: 200px;
+				width: 600px;
+				height: 450px;
 			}
 		`}</style>
 		hi

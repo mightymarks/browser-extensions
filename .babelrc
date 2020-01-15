@@ -8,9 +8,12 @@
 				"targets": {
 					"esmodules": true
 				}
+				// "modules: false" is set in webpack loader config
+				// so that we can use this config outside the bundle too
 			}
 		],
-		"@babel/preset-typescript"
+		"@babel/preset-typescript",
+		"@babel/preset-react"
 	],
 	"plugins": [
 		[
@@ -26,10 +29,6 @@
 			{
 				"sourceMaps": true
 			}
-		],
-		[
-			"@babel/plugin-transform-react-jsx",
-			{ "pragma": "h", "pragmaFrag": "Fragment" }
 		]
 	]
 }
