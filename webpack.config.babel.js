@@ -104,7 +104,11 @@ export default (env = {}) => ({
 					popup: 'popup',
 				},
 			}),
-		env.prod && new SizePlugin(),
+		env.prod &&
+			new SizePlugin({
+				exclude: '{report,browser-polyfill}.*',
+				filename: './.tmp/size-plugin.json',
+			}),
 	].filter(Boolean),
 
 	devServer: {
